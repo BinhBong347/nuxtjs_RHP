@@ -66,3 +66,15 @@ More information about the usage of this directory in [the documentation](https:
 This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
 
 More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+
+
+### Note
+- Khi dùng validate() {}
++ Phải return và cái validate phải chạy xong thì route ( path ) mới được chạy
+
+### Cấu trúc thư mục
+settings.vue
+folder settings: bên trong có tất cả path thì nó đều là nuxt-child của file.vue
+ + path: / => (render cả file .vue + index.vue trong folder )
+ + path /deck => pages/deck/index.vue
+ + path /schedule => pages/shedule/index.vue
