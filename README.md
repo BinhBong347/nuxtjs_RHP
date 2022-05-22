@@ -78,3 +78,9 @@ folder settings: bên trong có tất cả path thì nó đều là nuxt-child c
  + path: / => (render cả file .vue + index.vue trong folder )
  + path /deck => pages/deck/index.vue
  + path /schedule => pages/shedule/index.vue
+
+ ### COMMIT 
+ git commit -m "nội dung ở đây"  --no-verify
+
+ Binhb@ng17061996
+

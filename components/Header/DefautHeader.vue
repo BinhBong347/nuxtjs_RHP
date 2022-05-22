@@ -47,15 +47,17 @@ header {
       line-height: 60px;
 
       a {
+        display: block;
         text-decoration: none;
         color: white;
+        &:hover {
+          text-decoration: underline;
+        }
+        &.nuxt-link-exact-active {
+          background: orange;
+          color: black;
+        }
       }
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-    &:hover {
-      color: red;
     }
   }
 }
