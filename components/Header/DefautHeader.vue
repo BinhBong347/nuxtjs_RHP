@@ -50,6 +50,7 @@ header {
         display: block;
         text-decoration: none;
         color: white;
+        padding: 0 5px;
         &:hover {
           text-decoration: underline;
         }

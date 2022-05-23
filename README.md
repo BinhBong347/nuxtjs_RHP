@@ -84,3 +84,13 @@ folder settings: bên trong có tất cả path thì nó đều là nuxt-child c
 
  Binhb@ng17061996
 
+ ### VUEJS
+ - Khái niệm về Props Down: Nguyên tắc từ cha truyền xuống cho con con không có quyền thay đổi dữ liệu
+ - Event Up: Truyền thông báo (sự kiện) để cha thay đổi
+ v-on:click = "handleClick"
+ => click: Tên sự kiện
+ => handleClick: Hàm xử lý khi sự kiện được kích hoạt
+ TẠO RA MỘT SỰ KIỆN MỚI 
+ từ cha tạo một custom evetn gọi ở component con thông qua
+ this.$emit('ten sk custom', {dữ liệu đi kèm})
+

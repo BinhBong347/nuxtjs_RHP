@@ -2,6 +2,7 @@
   <div>
     <div class="container">
       <h3>List of your decks:</h3>
+      <button class="btn" @click.prevent="openModal">Create a decks</button>
       <ul class="deck__list">
         <li>
           <nuxt-link to="decks/1">
@@ -59,6 +60,12 @@
 <script>
 export default {
   name: 'PageDeck',
+  data() {
+    return {
+      test: 'test',
+    }
+  },
+  methods: {},
 }
 </script>
 
