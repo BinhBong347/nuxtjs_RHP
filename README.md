@@ -102,3 +102,26 @@ folder settings: bên trong có tất cả path thì nó đều là nuxt-child c
 
 ### video 30: SLOT
 có thể truyền component đến file cha, dùng slot để nhận dữ liệu từ file cha <slot></slot> 
+
+### Quay lại RHP 
+- asynData(): Những data sinh ra sau, được đổ vào dom thì sẽ được hiển thị lên trên DOM của trình duyệt ( vuejs k làm đc) cái này phục vụ cho SEO
++ Giup cho việc lấy data có tuần tự, dữ liệu được trả về ở đây là promise
++ có 2 parameter ( context, cb)
++ context: Phần đã thực thi khi kết nói với api, context.axios requrest tới api mình cần sau khi xong sẽ gọi tới cb
++ cb có nhiệm vụ set dữ liệu cho asyncData, và template của vueje truy cập và đổ ra DOM
+cb(err, dữ liệu muốn set)   db(err, {
+    data: []
+})
++ gọi dữ liệu trong created(): call api ở đây cần thời gian để call
++ 
+- Nuxt hoạt động khi lần đầu tiên web được refresh => nuxt sd serve để render ra DOM (search ENGINE sẽ đọc được) 
++ refresh lần đầu tiên: asyncData đang hoạt động với nuxt trên serve => khi console nó sẽ hiện ở terminal
++ sau lần đầu tiên render ra DOM mọi thứ đã được load, nó sẽ trở về như SPA ở đây asyncData đã là phía client ( tất cả là do vuejs sử lý)
+
+### video 25: sử dụng context
+đối tượng this là DOM => trong hàm asyncData sẽ chưa sử dụng dụng được
+muốn truy cập id dùng context.params.id 
+
+### video 26: sử dụng Promise
+return new Promise( bên trong là 1 cb fc)
+Sử dụng promise có 2 tham số là resolve, reject, nếu vào reject chú ý bắt lỗi và dùng context đẩy lỗi về 500

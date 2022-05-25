@@ -4,50 +4,15 @@
       <h3>List of your decks:</h3>
       <button class="btn" @click.prevent="openModal">Create a decks</button>
       <ul class="deck__list">
-        <li>
-          <nuxt-link to="decks/1">
+        <li v-for="(deck, index) in decks" :key="index">
+          <nuxt-link :to="`/decks/${deck.id}`">
             <div class="card">
               <div class="car-image">
-                <img
-                  src="https://jes.edu.vn/wp-content/uploads/2017/10/h%C3%ACnh-%E1%BA%A3nh.jpg"
-                  alt="Thumbnail"
-                />
+                <img :src="deck.thumbnail" alt="Thumbnail" />
               </div>
               <div class="card-body">
-                <h3>Title</h3>
-                <p>Description</p>
-              </div>
-            </div>
-          </nuxt-link>
-        </li>
-        <li>
-          <nuxt-link to="decks/1">
-            <div class="card">
-              <div class="car-image">
-                <img
-                  src="https://jes.edu.vn/wp-content/uploads/2017/10/h%C3%ACnh-%E1%BA%A3nh.jpg"
-                  alt="Thumbnail"
-                />
-              </div>
-              <div class="card-body">
-                <h3>Title</h3>
-                <p>Description</p>
-              </div>
-            </div>
-          </nuxt-link>
-        </li>
-        <li>
-          <nuxt-link to="decks/1">
-            <div class="card">
-              <div class="car-image">
-                <img
-                  src="https://jes.edu.vn/wp-content/uploads/2017/10/h%C3%ACnh-%E1%BA%A3nh.jpg"
-                  alt="Thumbnail"
-                />
-              </div>
-              <div class="card-body">
-                <h3>Title</h3>
-                <p>Description</p>
+                <h3>{{ deck.title }}</h3>
+                <p>{{ deck.desc }}</p>
               </div>
             </div>
           </nuxt-link>
@@ -60,12 +25,40 @@
 <script>
 export default {
   name: 'PageDeck',
-  data() {
-    return {
-      test: 'test',
-    }
+  asyncData(context) {
+    return new Promise((resolve, reject) => {
+      // eslint-disable-next-line nuxt/no-timing-in-fetch-data
+      setTimeout(() => {
+        resolve({
+          decks: [
+            {
+              id: 1,
+              title: 'Title 1',
+              thumbnail:
+                'https://jes.edu.vn/wp-content/uploads/2017/10/h%C3%ACnh-%E1%BA%A3nh.jpg',
+              desc: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora veritatis ea itaque nostrum debitis hic omnis beatae? Explicabo doloremque aliquam, necessitatibus nihil qui cumque quidem temporibus minus suscipit itaque recusandae?',
+            },
+            {
+              id: 2,
+              title: 'Title 2',
+              thumbnail:
+                'https://jes.edu.vn/wp-content/uploads/2017/10/h%C3%ACnh-%E1%BA%A3nh.jpg',
+              desc: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora veritatis ea itaque nostrum debitis hic omnis beatae? Explicabo doloremque aliquam, necessitatibus nihil qui cumque quidem temporibus minus suscipit itaque recusandae?',
+            },
+            {
+              id: 3,
+              title: 'Title 3',
+              thumbnail:
+                'https://jes.edu.vn/wp-content/uploads/2017/10/h%C3%ACnh-%E1%BA%A3nh.jpg',
+              desc: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora veritatis ea itaque nostrum debitis hic omnis beatae? Explicabo doloremque aliquam, necessitatibus nihil qui cumque quidem temporibus minus suscipit itaque recusandae?',
+            },
+          ],
+        })
+      }, 2000)
+    })
+      .then(() => console.log('data'))
+      .catch((err) => console.log(err))
   },
-  methods: {},
 }
 </script>
 
