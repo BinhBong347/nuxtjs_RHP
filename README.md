@@ -94,3 +94,11 @@ folder settings: bên trong có tất cả path thì nó đều là nuxt-child c
  từ cha tạo một custom evetn gọi ở component con thông qua
  this.$emit('ten sk custom', {dữ liệu đi kèm})
 
+
+### VIDE0 29: SỬ DỤNG REF
+- tạo 1 component
++ có ô input với type = file ( chọn ảnh) thêm 1 atrribute ref = 'abc'
++ tham chiếu tới ô input này bằng 1 button, khi click vào buuton ô input file sẽ hiện lên (thêm @click, viết logic trong tham chiếu tới dùng: this.$refs.abc.click())
+
+### video 30: SLOT
+có thể truyền component đến file cha, dùng slot để nhận dữ liệu từ file cha <slot></slot> 
