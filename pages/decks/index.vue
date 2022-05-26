@@ -56,8 +56,17 @@ export default {
         })
       }, 2000)
     })
-      .then(() => console.log('data'))
-      .catch((err) => console.log(err))
+  },
+
+  created() {
+    this.$store.dispatch('setDecks', this.decks)
+    // eslint-disable-next-line no-console
+    console.log(this.$store.getters.decks)
+  },
+  data() {
+    return {
+      decks: [],
+    }
   },
 }
 </script>

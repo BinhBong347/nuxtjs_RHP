@@ -125,3 +125,9 @@ muốn truy cập id dùng context.params.id
 ### video 26: sử dụng Promise
 return new Promise( bên trong là 1 cb fc)
 Sử dụng promise có 2 tham số là resolve, reject, nếu vào reject chú ý bắt lỗi và dùng context đẩy lỗi về 500
+
+### Học về VUEX CỦA NUXTJS (RHP-VIDEO 27)
+- Đại diện cho 1 center store ( kho chứa trung tâm )
++ chứa được nhiều kiện hàng (...)
+- Dữ liệu chứa trong store, tất cả component sử dụng đến dữ liệu này, khi trạng thái của đơn hàng thay đổi thì hiệu lực update trong store cũng sẽ thay đổi 
+=> 1 khi store thay đổi => tất cả component sd cũng thay đổi
